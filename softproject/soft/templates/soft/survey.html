@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>SURVEY</title>
+        <link rel="stylesheet" href="../../static/css/style.css">
+    </head>
+
+    <body>
+        <div class="welcome">
+            <h5>20 枚の画像のうち本物の多義図形が 10 枚, AI によって作成された多義図形が 10 枚含まれています! <br>
+                AI によって作成された多義図形を 10 枚見つけてみよう!! なお，このアンケートは一回のみの実施となります．ご了承ください．<br>
+                送信する前に必ず 10 枚選択の確認をお願いします．
+            </h5>
+        </div>
+        <div class="container">
+            <div class="item">
+                <img src="../static/survey_image/A.png" alt="A" width="200">
+                <td><h3>A</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/B.png" alt="B" width="200">
+                <td><h3>B</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/C.png" alt="C" width="200">
+                <td><h3>C</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/D.png" alt="D" width="200">
+                <td><h3>D</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/E.png" alt="E" width="200">
+                <td><h3>E</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/F.png" alt="F" width="200">
+                <td><h3>F</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/G.png" alt="G" width="200">
+                <td><h3>G</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/H.png" alt="H" width="200">
+                <td><h3>H</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/I.png" alt="I" width="200">
+                <td><h3>I</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/J.png" alt="J" width="200">
+                <td><h3>J</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/K.png" alt="K" width="200">
+                <td><h3>K</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/L.png" alt="L" width="200">
+                <td><h3>L</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/M.png" alt="M" width="200">
+                <td><h3>M</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/N.png" alt="N" width="200">
+                <td><h3>N</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/O.png" alt="O" width="200">
+                <td><h3>O</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/P.png" alt="P" width="200">
+                <td><h3>P</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/Q.png" alt="Q" width="200">
+                <td><h3>Q</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/R.png" alt="R" width="200">
+                <td><h3>R</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/S.png" alt="S" width="200">
+                <td><h3>S</h3></td>
+            </div>
+            <div class="item">
+                <img src="../static/survey_image/T.png" alt="T" width="200">
+                <td><h3>T</h3></td>
+            </div>
+        </div>
+
+        <form class="" action="{% url 'soft:survey_kekka' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="chkbox">
+                <div class="group">
+                AIによって作成された多義図形と思う画像 :
+                <input type="checkbox" id="officeA" name="office" value="A">
+                <label for="officeA">A</label>
+                <input type="checkbox" id="officeB" name="office" value="B">
+                <label for="officeB">B</label>
+                <input type="checkbox" id="officeC" name="office" value="C">
+                <label for="officeC">C</label>
+                <input type="checkbox" id="officeD" name="office" value="D">
+                <label for="officeD">D</label>
+                <input type="checkbox" id="officeE" name="office" value="E">
+                <label for="officeE">E</label>
+                <input type="checkbox" id="officeF" name="office" value="F">
+                <label for="officeF">F</label>
+                <input type="checkbox" id="officeG" name="office" value="G">
+                <label for="officeG">G</label>
+                <input type="checkbox" id="officeH" name="office" value="H">
+                <label for="officeH">H</label>
+                <input type="checkbox" id="officeI" name="office" value="I">
+                <label for="officeI">I</label>
+                <input type="checkbox" id="officeJ" name="office" value="J">
+                <label for="officeJ">J</label>
+                <input type="checkbox" id="officeK" name="office" value="K">
+                <label for="officeK">K</label>
+                <input type="checkbox" id="officeL" name="office" value="L">
+                <label for="officeL">L</label>
+                <input type="checkbox" id="officeM" name="office" value="M">
+                <label for="officeM">M</label>
+                <input type="checkbox" id="officeN" name="office" value="N">
+                <label for="officeN">N</label>
+                <input type="checkbox" id="officeO" name="office" value="O">
+                <label for="officeO">O</label>
+                <input type="checkbox" id="officeP" name="office" value="P">
+                <label for="officeP">P</label>
+                <input type="checkbox" id="officeQ" name="office" value="Q">
+                <label for="officeQ">Q</label>
+                <input type="checkbox" id="officeR" name="office" value="R">
+                <label for="officeR">R</label>
+                <input type="checkbox" id="officeS" name="office" value="S">
+                <label for="officeS">S</label>
+                <input type="checkbox" id="officeT" name="office" value="T">
+                <label for="officeT">T</label>
+                </div>
+            </div>
+            <div class="field">
+                <label>多義図形を見分けた理由</label><textarea name="kansou" id="kansou"></textarea>
+            </div>
+            <input type="text" name="dummy" style="display:none;">
+            <input type="button" name="button" value="送信" onClick="submit();">
+        </form>
+
+        <a href="{% url 'soft:index' %}">To index</a>
+    </body>
+</html>
+{% endblock content %}

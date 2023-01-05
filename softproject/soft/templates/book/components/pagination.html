@@ -1,0 +1,14 @@
+{% if page_obj.has_other_pages %}
+  <ul class="list-unstyled m-0 d-flex justify-content-between">
+    {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}">&lt;&lt;前へ</a></li>
+    {% else %}
+      <li class="text-muted">&lt;&lt;前へ</li>
+    {% endif %}
+    {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}">次へ&gt;&gt;</a></li>
+    {% else %}
+      <li class="text-muted">次へ&gt;&gt;</li>
+    {% endif %}
+  </ul>
+{% endif %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RESULT</title>
+        <link rel="stylesheet" href="../../static/css/style.css">
+    </head>
+
+    <body>
+        <div class="welcome">
+        <h1>Congratulations on generating ambiguous figures !!</h1>
+        </div>
+        <div class="container">
+            {% for path,score in amb_path.items %}
+                <div class="item">
+                    <th></th>
+                    {% if path %}
+                        <img src={{path}} alt="meru" width="250">
+                    {% endif %}
+                    <td><h3>Score = {{ score }}<br>
+                            User = {{user}}</h3><br>
+                    </td>
+                </div>
+            {% endfor %}
+        </div>
+        <a  href="{% url 'soft:upload' %}">Upload more</a><br>
+        <a href="{% url 'soft:index' %}">To index</a>
+    </body>
+</html>
+{% endblock content %}
+

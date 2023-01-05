@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}府大ラーメン{% endblock%}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="UTF-8">
+      <title>INDEX</title>
+      <link rel="stylesheet" href="../../static/css/style.css">
+  </head>
+
+  <div class="welcome">
+    <h1 class="title">最高のラーメンが見つかる!?</h1>
+    <p class="subtitle">公立大付近ラーメンチェッカー</p>
+    <a class="btn btn-primary" href="{% url 'soft:upload' %}">ラーメンを探す</a>
+  </div>
+
+  <div class="row">
+      <div class="col-9">
+      
+      <div class="p-4 m-4 bg-light border border-success rounded">
+          <h2 class="text-success">店名一覧</h2>
+          <div class="mt-3">
+            <a href="{% url 'soft:upload'%}">探す</a>
+          </div>
+      </div>
+
+      <div class="p-4 m-4 bg-light border border-success rounded">
+        <h2 class="text-success">レビューを書く</h2>
+        <div class="mt-3">
+          <a href="{% url 'soft:start_image'%}">表示</a>
+        </div>
+      </div>
+
+      <!-- {% if request.user in user_list%}
+        <div class="p-4 m-4 bg-light border border-success rounded">
+          <h4>アンケートの回答ありがとうございました！</h4>
+        </div>
+      {% else %}
+        <div class="p-4 m-4 bg-light border border-success rounded">
+          <h2 class="text-success">Find Ambiguous figures ! (初級編)</h2>
+          <div class="mt-3">
+            <a href="{% url 'soft:survey'%}">始める</a>
+          </div>
+        </div>
+      {% endif%}
+
+      {% if request.user in user_list2%}
+        <div class="p-4 m-4 bg-light border border-success rounded">
+          <h4>アンケートの回答ありがとうございました！</h4>
+        </div>
+      {% else %}
+        <div class="p-4 m-4 bg-light border border-success rounded">
+          <h2 class="text-success">Find Ambiguous figures ! (上級編)</h2>
+          <div class="mt-3">
+            <a href="{% url 'soft:survey2'%}">始める</a>
+          </div>
+        </div>
+      {% endif%}
+
+      <div class="p-4 m-4 bg-light border border-success rounded">
+        <h2 class="text-success">Readme</h2>
+        <h5>前提として多義図形とは複数の解釈を持つ画像のことです．<br>
+            だまし絵の一種という認識で問題ありません．<br>
+            Find Ambiguous figures におけるアンケート調査にご協力お願いします！<br>
+            収集したデータは人の近く認知の多様性理解のための研究活動にのみ使用し，個人情報等の漏洩はありません．<br>
+            一人でも多くのデータがあればより正確な解析ができ，非常に助かります！<br>
+            是非，選択した理由も含めて記入していただけると幸いです．<br>
+            なお，正答率等の開示はデータ収集後といたします．ご了承ください．
+            <br><br>
+            VS User Mode : <br>
+            多義図形らしさをScoreとして勝負します．トップページにてランキングを確認することができます．<br>
+            暫定評価を提示しています．(最終評価はScore以外にも考慮いたします．)<br>
+            
+            <br>
+            Start Image List :<br>
+            ご自由に画像を保存いただけます．画像生成のスタート画像にしても構いません．
+        </h5>
+      </div> -->
+
+      </div>
+      <div class="col-3">
+        <h2>レビュー評価順TOP2</h2>
+        {% for ranking_amb in page_obj %}
+          <div class="p-4 m-4 bg-light border border-success rounded">
+            <!--
+            <h3 class="text-success h5">{{ranking_amb.title}}</h3>
+            -->
+            <img src= {{ranking_amb.picture.url}} class="img-thumbnail"/>
+            <h6>Score : {{ranking_amb.softmax|floatformat:5}}</h6>
+            <h6>User : {{ranking_amb.user}}</h6>
+          </div>
+        {% endfor %}
+        {% include 'soft/components/pagination.html' %}
+      </div>
+  </div>
+</html>
+{% endblock content %}
+

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}府大ラーメン{% endblock %}
+{% block h1 %}府大ラーメン{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+  </head>
+
+  <div class="welcome">
+    <h1 class="title">最高のラーメンが見つかる!?</h1>
+    <p class="subtitle">公立大付近ラーメンチェッカー</p>
+    <a class="btn btn-primary" href="{% url 'menu-list' %}">ラーメンを探す</a>
+  </div>
+
+  <div class="row">
+    <div class="col-9">
+      {% for item in object_list %}
+        <div class="p-4 m-4 bg-light border border-success rounded">
+          <h2 class="text-success">{{ item.title }}</h2>
+          <img src="{{ item.thumbnail.url }}" class="img-thumbnail" />
+          <!-- <h6>カテゴリ：{{ item.category }}</h6> -->
+          <div class="mt-3">
+            <a class="btn btn-primary" href="{% url 'detail-book' item.pk %}">詳細へ</a>
+            <a class="btn btn-primary" href="{% url 'map-detail' item.pk %}">地図へ</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="col-3">
+      <h2>評価順TOP2</h2>
+      {% for ranking_book in page_obj %}
+        <div class="p-4 m-4 bg-light border border-success rounded">
+          <h3 class="text-success h5">{{ ranking_book.title }}</h3>
+          <img src="{{ ranking_book.thumbnail.url }}" class="img-thumbnail" />
+          <h6>評価：{{ ranking_book.avg_rating|floatformat:2 }}点</h6>
+          <a href="{% url 'detail-book' ranking_book.pk %}">詳細へ</a>
+        </div>
+      {% endfor %}
+      {% include 'book/components/pagination.html' %}
+    </div>
+  </div>
+</html>
+{% endblock %}

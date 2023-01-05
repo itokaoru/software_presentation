@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>RESULT</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        {% for path,score in amb_path_list.items %}
+            <div class="item">
+                    <img src={{path}} alt="meru" width="200">
+            </div>
+        {%endfor%}
+    </div>
+    <a href="{% url 'soft:index' %}">To index</a>
+</body>
+</html>
+{% endblock content %}

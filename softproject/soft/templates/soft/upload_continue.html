@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AMBIGUOUS FIGURES GENERATOR</title>
+    </head>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>SURVEY</title>
+        <link rel="stylesheet" href="../../static/css/style.css">
+    </head>
+
+    <body>
+        <div class="welcome">
+            <h2>多義図形生成アプリ</h2>
+            <h1>Ambiguous Generator (VS USER MODE)</h1>
+            <p>
+                Ambiguous Generator は入力画像（多義図形）にテキスト情報を加えることで新たな多義図形を作成できます．
+                <br>
+                お好みの画像とテキスト情報 (English) を入力してみよう．
+            </p>
+            <form enctype="multipart/form-data" action="{% url 'soft:continue' pk=pk %}" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br>
+                <input type="text" name="dummy" style="display:none;">
+                <input type="button" name="button" value="Upload" onClick="submit();">
+                <a href="{% url 'soft:showall' %}">過去の結果一覧を見る</a>
+            </form>
+        </div>
+    </body>
+</html>
+{% endblock content %}

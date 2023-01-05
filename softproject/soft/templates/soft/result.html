@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>RESULT</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div>
+        <h1>結果</h1>
+        <img src='{{now_image.picture.url}}' width=200>
+        <h2>Start Picture</h2>
+        <h1>生成画像</h1>
+    </div>
+    <div class="container">
+        {% for path,score in amb_path_list.items %}
+            <div class="item">
+                    <img src={{path}} alt="meru" width="300">
+                    <td><h3>Score = {{ score }}<br>
+                            User = {{user}}</h3>
+                    <a href="{% url 'soft:continue' forloop.counter0 %}" class="btn btn-primary">更に続ける</a><br>
+                    <a href="{% url 'soft:finish' forloop.counter0 %}" class="btn btn-primary">終了</a><br>
+                    </td>
+            </div>
+        {%endfor%}
+    </div>
+    <!--<a  href="{% url 'flower:upload' %}">Upload more</a>-->
+</body>
+</html>

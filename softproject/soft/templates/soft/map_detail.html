@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.title }}{% endblock %}
+{% block h1 %}MAP詳細{% endblock %}
+
+{% block content %}
+    <div class="iframe-wrp">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.235876946634!2d135.50740251529356!3d34.5475826989108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000dbdd798d0011%3A0x76371a5f157fdd3a!2z44OZ44Oq44O844Kw44OD44OJ6bq6!5e0!3m2!1sja!2sjp!4v1672838857668!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+{% endblock %}

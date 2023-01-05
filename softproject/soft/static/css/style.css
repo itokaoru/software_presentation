@@ -1,0 +1,187 @@
+@charset "UTF-8";
+.container{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.item{
+  margin: 10px;
+  padding: 10px;
+}
+.chkbox {
+  font-size:20px;
+	margin:			0 0 10px 20px;
+}
+/* ラベルのスタイル　*/
+.chkbox label {
+	padding-left:		38px;			/* ラベルの位置 */
+	font-size:		28px;
+	line-height:		28px;
+	display:		inline-block;
+	cursor:			pointer;
+	position:		relative;
+}
+
+/* ボックスのスタイル */
+.chkbox label:before {
+	content:		'';
+	width:			28px;			/* ボックスの横幅 */
+	height:			28px;			/* ボックスの縦幅 */
+	display:		inline-block;
+	position:		absolute;
+	left:			0;
+	background-color:	#fff;
+	box-shadow:		inset 1px 2px 3px 0px #000;
+	border-radius:		6px 6px 6px 6px;
+}
+/* 元のチェックボックスを表示しない */
+.chkbox input[type=checkbox] {
+	display:		none;
+}
+/* チェックした時のスタイル */
+.chkbox input[type=checkbox]:checked + label:before {
+	content:		'\2713';		/* チェックの文字 */ 
+	font-size:		32px;			/* チェックのサイズ */
+	color:			#fff;			/* チェックの色 */
+	background-color:	#06f;			/* チェックした時の色 */
+}
+
+.field{
+  font-size:20px;
+}
+
+.field textarea{
+  display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    margin: 0.5em 0;
+    line-height: 1.5;
+    height: 6em;
+}
+
+.welcome{
+  padding:3rem 0;
+  margin-bottom: 2rem;
+  background-color: #eee;
+  align-items: center;
+  display:flex;
+  flex-direction:column;
+}
+/* MENUの設定 */
+/* 共通部分
+------------------------------- */
+/* 文字化け防ぎと画像の大きさ抑制 */
+html {
+  font-size: 100%;
+}
+body{
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.7;
+  color: #432;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+/* HEADER
+------------------------------- */
+.logo {
+  width: 210px;
+  margin-top: 14px;
+}
+/* navを横並びに */
+.main-nav {
+  display: flex;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin-top: 34px;
+  list-style: none;
+}
+.main-nav li {
+  margin-left: 36px;
+}
+.main-nav a {
+  color: #432;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+/* いい感じの幅でヘッダーに*/
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* 見出し */
+.page-title {
+  font-size: 5rem;
+  font-family: 'Philosopher', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #fff;
+}
+
+/* ボタン */
+.button {
+  font-size: 1.375rem;
+  background: #0bd;
+  color: #fff;
+  border-radius: 5px;
+  padding: 18px 32px;
+}
+.button:hover {
+  background: #0090aa;
+}
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+}
+/* 背景のでかい画像 */
+#menu {
+  background-image: url(../images/mihon2.png);
+  min-height: 100vh;
+}
+.menu-content {
+  max-width: 560px;
+  margin-top: 10%;
+}
+.menu-content .page-title {
+  text-align: center;
+}
+.menu-content p {
+  font-size: 1.125rem;
+  margin: 10px 0 0;
+}
+/* ３×３で配置 */
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+
+/* googlemap */
+.iframe-wrp {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* = height ÷ width × 100 */
+}
+.iframe-wrp iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
