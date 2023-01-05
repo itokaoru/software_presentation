@@ -26,6 +26,10 @@ $ docker container ls
 $ docker inspect CONTAINER ID
 ```
 でNetworksという項目のIPAdressを使う.
+または,
+```Shell
+$ cat /etc/hosts
+```
 
 一度イメージを作ってしまえば以降,
 ```Shell
