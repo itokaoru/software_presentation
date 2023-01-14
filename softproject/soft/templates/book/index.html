@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}府大ラーメン{% endblock %}
-{% block h1 %}府大ラーメン{% endblock %}
+{% block title %}公立大ラーメン{% endblock %}
+{% block h1 %}公立大ラーメン{% endblock %}
 
 {% block content %}
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
   <div class="welcome">
     <h1 class="title">最高のラーメンが見つかる!?</h1>
-    <p class="subtitle">公立大付近ラーメンチェッカー</p>
+    <p class="subtitle">中百舌鳥キャンパス付近ラーメンチェッカー</p>
     <a class="btn btn-primary" href="{% url 'menu-list' %}">ラーメンを探す</a>
   </div>
 
@@ -33,12 +33,12 @@
       {% endfor %}
     </div>
     <div class="col-3">
-      <h2>評価順TOP2</h2>
+      <h2 class="top2">評価順TOP2</h2>
       {% for ranking_book in page_obj %}
         <div class="p-4 m-4 bg-light border border-success rounded">
           <h3 class="text-success h5">{{ ranking_book.title }}</h3>
           <img src="{{ ranking_book.thumbnail.url }}" class="img-thumbnail" />
-          <h6>評価：{{ ranking_book.avg_rating|floatformat:2 }}点</h6>
+          <h6 class="evalist">評価：{{ ranking_book.avg_rating|floatformat:2 }}点</h6>
           <a href="{% url 'detail-book' ranking_book.pk %}">詳細へ</a>
         </div>
       {% endfor %}
