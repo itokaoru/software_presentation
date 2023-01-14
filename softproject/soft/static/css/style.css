@@ -7,6 +7,10 @@
 .item{
   margin: 10px;
   padding: 10px;
+  padding-top: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  border: 3px solid #eee;
 }
 .chkbox {
   font-size:20px;
@@ -70,6 +74,17 @@
   display:flex;
   flex-direction:column;
 }
+.welcome p{
+  font-size: 20px;
+}
+
+.top2{
+  text-align: center;
+}
+.evalist{
+  padding-top: 10px;
+}
+
 /* MENUの設定 */
 /* 共通部分
 ------------------------------- */
@@ -87,23 +102,30 @@ a {
 }
 img {
   max-width: 100%;
+  zoom: 1.32;
+  border: 5px solid #e2d06e;
+  margin: auto;
 }
 /* HEADER
 ------------------------------- */
 .logo {
-  width: 210px;
+  /* width: 210px; */
+  width: 140px;
   margin-top: 14px;
 }
 /* navを横並びに */
 .main-nav {
   display: flex;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
+  font-size: 1.3rem;
   text-transform: uppercase;
   margin-top: 34px;
   list-style: none;
 }
 .main-nav li {
   margin-left: 36px;
+  background-color: white;
+  border: 4px solid #e2d06e;
 }
 .main-nav a {
   color: #432;
@@ -160,8 +182,12 @@ img {
   text-align: center;
 }
 .menu-content p {
-  font-size: 1.125rem;
+  /* font-size: 1.125rem; */
+  font-size: 1.35rem;
+  font-weight: bold;
   margin: 10px 0 0;
+  background-color: goldenrod;
+  background: rgba(193,168,39,0.85)
 }
 /* ３×３で配置 */
 .grid {
