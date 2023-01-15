@@ -72,7 +72,7 @@ class MenuView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'soft/menu_list.html'
 
-class MapView(LoginRequiredMixin, ListView):
+class MapView(LoginRequiredMixin, DetailView):
     model = Book
     template_name = 'soft/map_detail.html'
 
