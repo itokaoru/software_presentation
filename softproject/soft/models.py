@@ -14,7 +14,6 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
     thumbnail = models.ImageField(null=True, blank=True)
-    map = models.TextField(null=True)
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     def __str__(self):
