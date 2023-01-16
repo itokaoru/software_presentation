@@ -31,7 +31,7 @@ class CreateBookView(LoginRequiredMixin, CreateView):
     model = Book
     template_name = 'book/book_create.html'
     fields = ('title', 'text', 'thumbnail')
-    success_url = reverse_lazy('list-book')
+    success_url = reverse_lazy('index')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -41,7 +41,7 @@ class CreateBookView(LoginRequiredMixin, CreateView):
 class DeleteBookView(LoginRequiredMixin, DeleteView):
     model = Book
     template_name = 'book/book_delete.html'
-    success_url = reverse_lazy('list-book')
+    success_url = reverse_lazy('index')
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
