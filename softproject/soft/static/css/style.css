@@ -82,7 +82,15 @@
   text-align: center;
 }
 .evalist{
-  padding-top: 10px;
+  padding-top: 20px;
+  font-size: 20px;
+}
+.detail{
+  font-size: 19px;
+}
+.top2_name{
+  font-size: 26px;
+  color: green;
 }
 
 /* MENUの設定 */
@@ -143,6 +151,15 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 4%;
+}
+
+/* "詳細へ"と"地図へ"ボタンの間隔や大きさを調整 */
+.mt-3 a{
+  margin-right: 12px;
+  font-size: 16px;
+}
+.item a{
+  font-size: 20px;
 }
 
 /* 見出し */

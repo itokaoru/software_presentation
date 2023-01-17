@@ -19,8 +19,9 @@
   </div>
 
   <div class="row">
-    <div class="col-9">
+    <div class="col-8">
       {% for item in object_list %}
+        <!-- <div class="p-4 m-4 bg-light border border-success rounded"> -->
         <div class="p-4 m-4 bg-light border border-success rounded">
           <h2 class="text-success">{{ item.title }}</h2>
           {% if item.thumbnail %}
@@ -34,16 +35,17 @@
         </div>
       {% endfor %}
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <h2 class="top2">評価順TOP2</h2>
       {% for ranking_book in page_obj %}
-        <div class="p-4 m-4 bg-light border border-success rounded">
-          <h3 class="text-success h5">{{ ranking_book.title }}</h3>
+        <div class="p-3 m-4 bg-light border border-success rounded">
+          <!-- <h3 class="text-success h5">{{ ranking_book.title }}</h3> -->
+          <h3 class="top2_name">{{ ranking_book.title }}</h3>
           {% if ranking_book.thumbnail %}
             <img src="{{ ranking_book.thumbnail.url }}" class="img-thumbnail" />
           {% endif %}
           <h6 class="evalist">評価：{{ ranking_book.avg_rating|floatformat:2 }}点</h6>
-          <a href="{% url 'detail-book' ranking_book.pk %}">詳細へ</a>
+          <a href="{% url 'detail-book' ranking_book.pk %}" class="detail">詳細へ</a>
         </div>
       {% endfor %}
       {% include 'book/components/pagination.html' %}
