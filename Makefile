@@ -12,6 +12,7 @@ build:
 .PHONY: run
 run:
 	@docker run --rm -it \
+          -p 8000:8000 \
           -u root \
           --name $(CONTAINER_NAME) \
           -v $(shell pwd):/var/www \
