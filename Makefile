@@ -1,5 +1,5 @@
 # 命名規則 : (dockerhub のアカウント名)/(環境名):(バージョンタグ)
-IMAGE_NAME := otamesi515/sample_env:1.0
+IMAGE_NAME := minidd/teamgimage:latest
 # 命名規則 : (環境名).(使用者の名前)
 CONTAINER_NAME := sample_env.ito
 
